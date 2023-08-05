@@ -54,9 +54,6 @@ li{
     cursor: pointer;
 }
 
-.none{
-    display: none;
-}
 
 .flex{
     display: flex;
@@ -66,6 +63,9 @@ li{
 .grid{
     display: grid;
     align-items: center;
+}
+.none{
+    display: none;
 }
 
 .btn{
@@ -112,5 +112,150 @@ h2{
     font-size: 25px;
     padding: 1rem 0;
     color: var(--blackColor);
+}
+
+.navBar{
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    z-index: 1000;
+
+    .navBarOne, .navBarTwo{
+        justify-content: space-between;
+        padding: 1rem;
+        width: 100%;
+
+    }
+
+    .navBarOne{
+        background: var(--SecondaryColor);
+        .icon:hover{
+            color: var(--PrimaryCOlor);
+        }
+
+        .atb{
+            gap: 1rem;
+
+            span{
+                color: var(--blackColor);
+                font-size: 13px;
+                cursor: pointer;
+
+                &:hover{
+                    color: var(--PrimaryColor);
+                    font-size: 700;
+                }
+            }
+        }
+    }
+
+    .navBarTwo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        top: 3rem;
+        padding: 1.5rem 1rem;
+        position: fixed;
+        transition: .3s ease-in-out;
+
+        .logoDiv{
+            .logo{
+                width: 20%;
+            }
+        }
+        @media screen and (max-width: 768px){
+            .navBarMenu{
+                position: absolute;
+                background: var(--SecondaryColor);
+                padding: 1.5rem;
+                border-radius: 10px;
+                top: 5rem;
+                right: -50%;
+                width: 80%;
+                transform: translateX(50%);
+                z-index: 2000;
+                box-shadow: rgba(0,0,0,0.1) 0px 10px 15px -3px, rgba(0,0,0,0.05) 0px 4px 6px -2px;
+                border: 3px solid var(--whiteColor);
+                transition: .4s ease-in-out;
+
+                .menu{
+                    flex-direction: column;
+                    gap: .5rem;
+                    text-align: center;
+
+                    .listItem{
+                        padding: .5rem 0;
+                        cursor: pointer;
+                        color: var(--blackColor);
+
+                        &:hover{
+                            color: var(--PrimaryColor);
+                            font-weight: 700;
+                        }
+
+                    }
+                }
+                .btnOne{
+                    display: block;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 1rem;
+
+                }
+            }
+
+            .btnTwo{
+                display: none;
+
+            }
+        }
+
+        .toggleIcon{
+            .icon{
+                font-size: 30px;
+                color: var(--blackColor);
+
+            }
+        }
+        .showNavBar{
+            right: 50%;
+            transition: .5s ease-in-out;
+        }
+    }
+}
+
+.home{
+    padding-top: 10rem;
+    text-align: center;
+    gap: 2rem;
+    flex-direction: 2.5rem;
+
+    .mainText{
+        color: var(--blackColor);
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 2.5rem;
+    }
+
+    .homeImages{
+        width: 100%;
+        margin: 1rem auto 0;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 5rem;
+
+        .videoDiv{
+            width: 100%;
+            .video{
+                border-radius: 10rem;
+            }
+        }
+        .plane{
+            position: absolute;
+            width: 100%;
+            top: -10%;
+        }
+    }
 }
 
