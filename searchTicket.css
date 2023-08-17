@@ -1,0 +1,63 @@
+.searchTicket {
+  background-image: url('../../public/images/img-home.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 120vh;
+}
+
+.searchTicketContainer {
+  padding: 70px 72px;
+}
+
+.searchTicketCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgba(255,255,255, 0.9);
+  min-height: 100vh;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.formLeft {
+  flex: 2;
+  padding: 30px 35px;
+}
+
+.searchTicketHeading {
+  font-size: 20px;
+}
+
+/* .cardRight {
+  flex: 3.5;
+  background-image: url('../../public/images/searchBooking.jpg');
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  position: static;
+} */
+
+
+.searchTicketButton {
+  padding: 12px 32px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #FAAB18, #FFDD00);
+  font-weight: 400;
+  border: 0px;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 35px;
+  padding: 30px 35px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.searchError {
+  color: red;
+  font-size: 16px;
+  margin-top: 20px;
+}
