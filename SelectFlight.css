@@ -1,0 +1,37 @@
+.wrapper.container {
+  background-image: linear-gradient(to right, rgba(250, 178, 20, 1), rgba(251, 243, 1, 1));
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 75px;
+}
+
+.backgroundCustom {
+  background-image: url('../public/images/img-home.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto !important;
+  min-height: 110vh;
+}
+
+.customHeader {
+  color: aliceblue !important;
+}
+
+.search__info {
+  padding: 10px 10px;
+  margin-top: 10px;
+}
+
+.search__info > h1 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.desciption {
+  display: flex;
+  justify-content: center;
+}
+

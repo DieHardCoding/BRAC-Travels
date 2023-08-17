@@ -1,0 +1,9 @@
+.passengerBackground {
+  background-image: url('../public/images/img-12.jpg');
+  background-size: cover;
+  min-height: 110vh !important;
+}
+
+.customHeader {
+  color: aliceblue !important;
+}
