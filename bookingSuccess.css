@@ -1,0 +1,26 @@
+.bookingSuccess {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  background-image: url('../public/images/img-home.jpg');
+  min-height: 100vh;
+}
+
+.ticket {
+  width: 600px !important;
+  min-height: 300px;
+  text-align: center;
+}
+
+.header--green {
+  color: rgb(59, 202, 59) !important;
+  font-size: 30px !important;
+}
+
+.summary.center {
+  text-align: center;
+  font-size: 20px !important;
+  line-height: 25px;
+  font-weight: 100;
+}

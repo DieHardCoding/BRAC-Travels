@@ -1,0 +1,33 @@
+.CardItem {
+  display: flex;
+  min-width: 100%;
+  min-height: 100px;
+  background-color: #fff;
+  padding: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 3px 3px 6px rgb(155, 154, 154);
+  margin-bottom: 15px;
+}
+
+.CardItem img{
+  width: 60px;
+  height: 60px;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left-content .header {
+  margin-left: 20px;
+}
+
+
+/* .left-content .header > h3 {
+  font-weight: bold;
+} */
