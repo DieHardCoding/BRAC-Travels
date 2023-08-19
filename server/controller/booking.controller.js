@@ -111,7 +111,7 @@ module.exports.createBookingAndTickets = async (req, res) => {
     ticketInfos = req.body.ticketInfos;
   }
   if (!Array.isArray(ticketInfos)) {
-    return res.status(400).json({ errors: ["Does not found any tickets"] });
+    return res.status(400).json({ errors: ["Can not find any tickets"] });
   }
   // if (req.body.hasOwnProperty("ticketInfos")) {
   //   ticketInfos = JSON.parse(req.body.ticketInfos);
@@ -215,7 +215,7 @@ module.exports.createBookingAndTickets = async (req, res) => {
     </div>`;
       email = result.email;
       if (validation.emailValidation(email)) {
-        emailHelper.sendEmail(result.email, "Xác nhận đặt chỗ", emailMessage);
+        emailHelper.sendEmail(result.email, "Confirm booking", emailMessage);
       }
       res.status(201).json(result);
     })

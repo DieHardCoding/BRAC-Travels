@@ -41,7 +41,7 @@ function ListService(props) {
 
   const SeatsMapcontent = (
     <>
-      <h3>Chuyến đi</h3>
+      <h3>Trip</h3>
       <Plane
         return={false}
         airliner={props.airliner}
@@ -50,7 +50,7 @@ function ListService(props) {
       
       {props.returnFlight && 
         <>
-          <h3>Chuyến về</h3>
+          <h3>Return Trip</h3>
           <Plane
             return={true}
             airliner={props.returnFlight.airliner}
@@ -63,7 +63,7 @@ function ListService(props) {
   )
 
   const LuggageContent = (
-    <p>Hãy chọn gói hành lý </p>
+    <p>Please select your luggage package </p>
   )
 
   const SeatMapAction = () => {
@@ -89,8 +89,8 @@ function ListService(props) {
     <div>
       <CardItem
         src={SeatImage}
-        heading="Chọn chỗ ngồi yêu thích"
-        description="Hãy chọn chỗ ngồi yêu thích của bạn"
+        heading="Choose seat"
+        description="Please choose your seat"
         content={SeatsMapcontent}
         actions={SeatMapAction}
         showModal={showSeatModal}
@@ -98,8 +98,8 @@ function ListService(props) {
       />
       <CardItem
         src={Luggage}
-        heading="Chọn hành lý"
-        description="Hãy chọn gói hành lý phù hợp"
+        heading="Select baggage"
+        description="Please select the appropriate baggage package"
         content={LuggageContent}
         actions={LuggageAction}
         showModal={showLuggageModal}

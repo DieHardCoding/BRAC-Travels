@@ -22,9 +22,9 @@ import history from '../history';
 
 
 const startFrom = [
-  { title: 'TP Hồ Chí Minh', value: 'HCM' },
-  { title: 'Hà Nội', value: 'HaNoi' },
-  { title: 'Kiên Giang', value: 'KienGiang'}
+  { title: 'Ho Chi Minh City', value: 'HCM' },
+  { title: 'Hanoi', value: 'HaNoi' },
+  { title: 'Kien Giang', value: 'KienGiang'}
 ];
 
 const destinations = [
@@ -52,26 +52,26 @@ function FormBooking(props) {
         </div>
         <div className="field">
           <Field name="startFrom" component={renderSelect}
-          label="Điểm khởi hành"
+          label="Departure"
            options={props.airports}
           />
         </div>
         <div className="field">
-          <Field name="departureDay" component={DateField} label="Ngày đi" />
+          <Field name="departureDay" component={DateField} label="Departure date" />
         </div>
         <div className="field">
           <Field name="destination" component={renderSelect} 
           options={props.airports}
-          label="Điểm đến" />
+          label="Destination" />
         </div>
         { props.type === 'roundtrip' && (
           <div className="field">
-          <Field name="returnDay" component={DateField} label="Ngày về" />
+          <Field name="returnDay" component={DateField} label="Return Date" />
         </div>
         )}
         <div style={{ textAlign: 'center'}}>
           <Button type="submit" size="large" style={{ marginTop: 25 }} variant="contained" color="secondary">
-            Tìm chuyến bay
+            Find Flights
             <i className="fas fa-plane-departure" style={{marginLeft: 6}}></i>
           </Button>
         </div>
@@ -84,8 +84,9 @@ const renderRadio = ({ input }) => {
   return (
     <FormControl component="fieldset">
       <RadioGroup row {...input} >
-        <FormControlLabel value="roundtrip" control={<Radio />} label="Khứ hồi" />
-        <FormControlLabel value="oneway" control={<Radio />} label="Một chiều" />
+        <FormControlLabel value="roundtrip" control={<Radio />} label="Round-trip
+" />
+        <FormControlLabel value="oneway" control={<Radio />} label="One-way" />
       </RadioGroup>
     </FormControl>
   )
@@ -101,7 +102,7 @@ const renderSelect = ({ input, options, label, meta }) => {
       <InputLabel id="demo-simple-select-outlined-label">{label}</InputLabel>
       <Select
         {...input}
-        label="Điểm khởi hành"
+        label="Departure"
       >
         
         {options.map((item) => {
@@ -154,18 +155,18 @@ const validate = (formValues) => {
 
   requiredFields.forEach(field => {
     if(!formValues[field]) {
-      errors[field] = 'Không bỏ trống';
+      errors[field] = 'Do not leave blank';
     }
   })
   
   if(formValues['startFrom'] === formValues['destination']) {
-    errors['destination'] = 'Điểm đến không được trùng điểm khởi hành';
+    errors['destination'] = 'The destination cannot be the same as the departure point';
   }
   if(formValues['departureDay'] && formValues['returnDay']) {
     const departureDay = new Date(formValues['departureDay']);
     const returnDay = new Date(formValues['returnDay']);
     if(departureDay.getTime() > returnDay.getTime()) {
-      errors['returnDay'] = 'Ngày về phải sau ngày đi'
+      errors['returnDay'] = 'The return date must be after the departure date'
     }
   }
   return errors;

@@ -10,14 +10,14 @@ function BookingInFor(props) {
     }
     return (
       <div>
-        <div>Khởi hành lúc: {props.selectedFlight.takeOffTime}</div>
-        <div>Hạ cánh lúc: {props.selectedFlight.landingTime}</div>
-        <div>Loại vé: {props.selectedFlight.type}</div>
+        <div>Departure: {props.selectedFlight.takeOffTime}</div>
+        <div>Landing: {props.selectedFlight.landingTime}</div>
+        <div>Ticket Type: {props.selectedFlight.type}</div>
         <div className="ui content">
-          Giá vé: <span className="ui header red">{parseInt(props.selectedFlight.price.value).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</span>
+          Fare: <span className="ui header red">{parseInt(props.selectedFlight.price.value).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</span>
         </div>
         <div className="ui content">
-          Thuế: <span className="ui header red">{parseInt(props.selectedFlight.price.tax).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</span>
+          Tax: <span className="ui header red">{parseInt(props.selectedFlight.price.tax).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</span>
         </div>
       </div>
     )
@@ -28,14 +28,14 @@ function BookingInFor(props) {
       return null;
     return (
       <div>
-        <div>Khởi hành lúc: {props.selectedReturnFlight.takeOffTime}</div>
-        <div>Hạ cánh lúc: {props.selectedReturnFlight.landingTime}</div>
-        <div>Loại vé: {props.selectedReturnFlight.type}</div>
+        <div>Departure at: {props.selectedReturnFlight.takeOffTime}</div>
+        <div>Landing at: {props.selectedReturnFlight.landingTime}</div>
+        <div>Ticket Type: {props.selectedReturnFlight.type}</div>
         <div className="ui content">
-          Giá vé: <span className="ui header red">{parseInt(props.selectedReturnFlight.price.value).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</span>
+          Fare: <span className="ui header red">{parseInt(props.selectedReturnFlight.price.value).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</span>
         </div>
         <div className="ui content">
-          Thuế: <span className="ui header red">{parseInt(props.selectedReturnFlight.price.tax).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</span>
+          Tax: <span className="ui header red">{parseInt(props.selectedReturnFlight.price.tax).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</span>
         </div>
       </div>
     )
@@ -51,15 +51,15 @@ function BookingInFor(props) {
   return (
     <div class="ui card customCard">
       <div class="content">
-        <div class="header">Thông tin đặt chỗ</div>
+        <div class="header">Booking Information</div>
       </div>
       <div class="content">
-        <h4 class="ui sub header">Thông tin hành khách</h4>
+        <h4 class="ui sub header">Passenger information</h4>
         <div class="ui small feed">
           <div class="event">
             <div class="content">
               <div class="summary">
-                {props.passenger.firstName && <span>Họ và tên: {props.passenger.firstName}</span>}
+                {props.passenger.firstName && <span>First and last name: {props.passenger.firstName}</span>}
                 {props.passenger.lastName && <span>{' ' + props.passenger.lastName}</span>}
                 {props.passenger.passengerId && <p>CMND: {props.passenger.passengerId}</p>}
               </div>
@@ -68,7 +68,7 @@ function BookingInFor(props) {
         </div>
       </div>
       <div className="content">
-        <h4 class="ui header">Chuyến đi</h4>
+        <h4 class="ui header">Trip</h4>
         <div class="ui small feed">
           <div class="event">
             <div class="content">
@@ -84,7 +84,7 @@ function BookingInFor(props) {
       </div>
       {props.type === 'roundtrip' &&
         <div className="content">
-          <h4 class="ui header">Chuyến về</h4>
+          <h4 class="ui header">Return trip</h4>
           <div class="ui small feed">
             <div class="event">
               <div class="content">
@@ -101,7 +101,7 @@ function BookingInFor(props) {
       }
       <div class="extra content">
         <div class="header">
-          Tổng tiền:  <span className="ui header red">{totalPrice.toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</span>
+          Total Amount:  <span className="ui header red">{totalPrice.toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</span>
         </div>
       </div>
     </div>

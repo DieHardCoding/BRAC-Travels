@@ -248,15 +248,15 @@ module.exports.patchFlight = async (req, res) => {
     } */
     if (req.body.hasOwnProperty("airliner")) {
       let airliner = await airlinerModel.findById(req.body.airliner);
-      if (!airliner) throw new Error("Not exist airliner");
+      if (!airliner) throw new Error("airport does not exist");
     }
     if (req.body.hasOwnProperty("startFrom")) {
       let airport = await airportModel.findById(req.body.startFrom);
-      if (!airport) throw new Error("Not exist airport");
+      if (!airport) throw new Error("airport does not exist");
     }
     if (req.body.hasOwnProperty("destination")) {
       let airport = await airportModel.findById(req.body.destination);
-      if (!airport) throw new Error("Not exist airport");
+      if (!airport) throw new Error("airport does not exist");
     }
   } catch (e) {
     console.error(e);

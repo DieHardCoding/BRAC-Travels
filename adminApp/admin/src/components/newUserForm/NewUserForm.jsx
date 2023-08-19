@@ -77,7 +77,7 @@ const validate = formValues => {
   } else if(formValues.password.length < 8){
     error.password = 'Password must be at least 8 characters';
   } else if(formValues.checkpass && formValues.checkpass !== formValues.password)  {
-    error.checkpass = "Password di'nt match"
+    error.checkpass = "Password didn't match"
   }
   
 

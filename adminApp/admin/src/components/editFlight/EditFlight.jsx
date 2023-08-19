@@ -61,7 +61,7 @@ const renderInputAdornment = ({ input, label, meta }) => {
       label="With normal TextField"
       id="standard-start-adornment"
       {...input}
-      label={label}
+      Label={label}
       error={meta.touched && meta.invalid}
       InputProps={{
         startAdornment: <InputAdornment position="start">VND</InputAdornment>,
@@ -158,19 +158,19 @@ const validate = (formValues) => {
 
   requiredFields.forEach(field => {
     if (!formValues[field]) {
-      errors[field] = 'Không bỏ trống';
+      errors[field] = 'Do not leave blank';
     }
   })
 
   if (formValues['startFrom'] === formValues['destination']) {
-    errors['destination'] = 'Điểm đến không được trùng điểm khởi hành';
+    errors['destination'] = 'The destination cannot be the same as the departure point';
   }
 
   if(formValues['takeOffTime'] && formValues['landingTime']) {
     const takeOffTime = new Date(formValues['takeOffTime']);
     const landingTime = new Date(formValues['landingTime']);
     if(takeOffTime.getTime() > landingTime.getTime()) 
-      errors['landingTime'] = 'Thời gian hạ cánh phải sau thời gian cất cánh';
+      errors['landingTime'] = 'Landing time must be after take-off time';
   }
   return errors;
 }

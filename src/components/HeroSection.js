@@ -11,7 +11,7 @@ function HeroSection() {
       <div className="hero-container">
         <div className="heading__primary">
           <h1>ADVENTURE AWAITS</h1>
-          <p>What are you waiting for?</p>
+          <p>A Journey To Remember</p>
           <div className="hero-btns">
             <Button
               className="btns"

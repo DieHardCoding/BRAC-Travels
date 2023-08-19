@@ -21,7 +21,7 @@ module.exports.userRegistaion = async (req, res) => {
     return;
   }
   if (await userModel.isEmailExisted(req.body.email)) {
-    res.status(400).json({ error: 'email is already exist' });
+    res.status(400).json({ error: 'email already exists' });
     return;
   }
   let salt = crypto.randomBytes(16).toString('base64');

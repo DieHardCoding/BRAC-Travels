@@ -31,19 +31,19 @@ function ListFlight(props) {
           <FormControlLabel value="Eco"
             checked={props.selectedFlight && flight.flightId === props.selectedFlight.flightId && props.selectedFlight.type === 'Eco'}
             onChange={() => onSelectFlight({ ...flight, type: 'Eco', price: flight.price.Eco })}
-            control={<Radio />} label="Eco" /><br />{parseInt(flight.price.Eco.value).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}
+            control={<Radio />} label="Eco" /><br />{parseInt(flight.price.Eco.value).toLocaleString('it-IT', { style: 'currency', currency: 'BDT' })}
         </td>
         <td>
           <FormControlLabel value="Deluxe"
             checked={props.selectedFlight && flight.flightId === props.selectedFlight.flightId && props.selectedFlight.type === 'Deluxe'}
             onChange={() => onSelectFlight({ ...flight, type: 'Deluxe', price: flight.price.Deluxe })}
-            control={<Radio />} label="Deluxe" /><br />{parseInt(flight.price.Deluxe.value).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</td>
+            control={<Radio />} label="Deluxe" /><br />{parseInt(flight.price.Deluxe.value).toLocaleString('it-IT', { style: 'currency', currency: 'BDT' })}</td>
 
         <td>
           <FormControlLabel value="SkyBOSS"
             checked={props.selectedFlight && flight.flightId === props.selectedFlight.flightId && props.selectedFlight.type === 'SkyBOSS'}
             onChange={() => onSelectFlight({ ...flight, type: 'SkyBOSS', price: flight.price.SkyBOSS })}
-            control={<Radio />} label="SkyBOSS" /><br />{parseInt(flight.price.SkyBOSS.value).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}
+            control={<Radio />} label="SkyBOSS" /><br />{parseInt(flight.price.SkyBOSS.value).toLocaleString('it-IT', { style: 'currency', currency: 'BDT' })}
         </td>
       </tr>
     )

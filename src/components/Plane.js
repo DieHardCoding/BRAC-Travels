@@ -49,7 +49,7 @@ function Plane(props) {
     <div className="plane">
       <div className="cockpit">
         <h1>{props.airliner.manufacturer} {props.airliner.model}</h1>
-        <p>Khoang: {props.type}</p>
+        <p>Space: {props.type}</p>
       </div>
       <div className="exit exit--front fuselage">
       </div>

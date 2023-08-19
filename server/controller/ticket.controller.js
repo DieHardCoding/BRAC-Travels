@@ -9,7 +9,7 @@ module.exports.createTicket = async (req, res) => {
     if (req.body.hasOwnProperty("flightId")) {
       let flight = await flightModel.findById(req.body.flightId);
       if (!flight) {
-        throw new Error("Not exist flight");
+        throw new Error("Flight does not exist");
       }
       let seatExist = false;
       for (let i = 0; i < flight.cabinFuselage.length; i++) {
@@ -42,7 +42,7 @@ module.exports.createTicket = async (req, res) => {
         }
       }
       if (!seatExist) {
-        throw new Error("Seat is not exist");
+        throw new Error("Seat does not exist");
       }
       //console.log(flight);
       let updateSeat = { cabinFuselage: flight.cabinFuselage };
@@ -83,7 +83,7 @@ module.exports.patchTicket = async (req, res) => {
     if (req.body.hasOwnProperty("flightId")) {
       let flight = await flightModel.findById(req.body.flightId);
       if (!flight) {
-        throw new Error("Not exist flight");
+        throw new Error("Flight does not exist");
       }
     }
   } catch (e) {

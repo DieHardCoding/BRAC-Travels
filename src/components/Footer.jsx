@@ -3,9 +3,7 @@ import './footer.css';
 
 function Footer() {
   return (
-    <div className="footer">
-      Copyright © 2021 by Sugar-DEV
-    </div>
+    <div className="footer"> CSE 470 project    </div>
   )
 }
 

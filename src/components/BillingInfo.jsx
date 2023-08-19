@@ -129,14 +129,14 @@ function BillingInfo(props) {
       <div className="ui container grid" style={{ marginTop: 20 }}>
         <div className="eleven wide column">
           <Form onSubmit={props.handleSubmit(onSubmit)}>
-            <h4 className="ui dividing header">Thông tin thanh toán</h4>
+            <h4 className="ui dividing header">Billing Information</h4>
             <div className="field">
-              <label>Loại thẻ</label>
+              <label>Card type</label>
               <Field name="cardType" component={renderSelectField} />
             </div>
             <div className="fields">
               <div className="seven wide field">
-                <label>Số thẻ</label>
+                <label>Card number</label>
                 <input type="text" name="card[number]" maxlength="16" placeholder="Card #" />
               </div>
               <div className="three wide field">
@@ -144,7 +144,7 @@ function BillingInfo(props) {
                 <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC" />
               </div>
               <div className="six wide field">
-                <label>Hạn thẻ</label>
+                <label>Card expiry date</label>
                 <div className="two fields">
                   <div className="field">
                     <select className="ui fluid search dropdown" name="card[expire-month]">
@@ -171,10 +171,10 @@ function BillingInfo(props) {
             </div>
             <div className="div" style={{ display: 'flex', justifyContent: 'space-evenly', marginTop: '35px' }}>
               <Link to="/select-service" className="ui button">
-                Quay lại
+                Return
               </Link>
               <button type="submit" className="ui button primary">
-                Đặt vé
+                Book Tickets
               </button>
             </div>
           </Form>
@@ -194,16 +194,16 @@ function BillingInfo(props) {
     <div className="billingBackground">
       <div className="ui container wrapper">
         <div className="search__info">
-          {props.type === 'oneway' && <h3>CHUYẾN BAY MỘT CHIỀU | 1 Người lớn</h3>}
-          {props.type === 'roundtrip' && <h3>CHUYẾN BAY KHỨ HỒI | 1 Người lớn</h3>}
+          {props.type === 'oneway' && <h3>ONE-WAY FLIGHT | 1 adult</h3>}
+          {props.type === 'roundtrip' && <h3>ROUND-WAY FLIGHT | 1 adult</h3>}
           <div className="desciption">
             <p style={{ marginRight: 20 }}>
               <i style={{ marginRight: 10 }} className="fas fa-map-marker-alt"></i>
-              Điểm Khởi hành <span>{props.startFrom.name}</span>
+              Departure <span>{props.startFrom.name}</span>
             </p>
             <p>
               <i style={{ marginRight: 10 }} className="fas fa-map-marker-alt"></i>
-              Điểm đến <span>{props.destination.name}</span>
+              Destination <span>{props.destination.name}</span>
             </p>
           </div>
         </div>
